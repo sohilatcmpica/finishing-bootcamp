@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechLaunch Finishing School | Gujarat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#38bdf8', // Sky blue
+                            secondary: '#818cf8', // Indigo
+                            success: '#34d399'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="rocket" class="h-8 w-8 text-brand-accent"></i>
+                    <span class="font-bold text-xl tracking-tight text-white">TechLaunch<span class="text-brand-accent">Gujarat</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-brand-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Our Mission</a>
+                        <a href="#curriculum" class="hover:text-brand-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Curriculum</a>
+                        <a href="#benefits" class="hover:text-brand-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Student Growth</a>
+                        <a href="#register" class="bg-brand-accent hover:bg-sky-500 text-slate-900 px-5 py-2 rounded-full font-bold text-sm transition-all shadow-lg shadow-sky-500/20">Claim Your Spot</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button onclick="toggleMobileMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:text-brand-accent">Our Mission</a>
+                <a href="#curriculum" class="block px-3 py-2 rounded-md text-base font-medium hover:text-brand-accent">Curriculum</a>
+                <a href="#benefits" class="block px-3 py-2 rounded-md text-base font-medium hover:text-brand-accent">Student Growth</a>
+                <a href="#register" class="block px-3 py-2 mt-4 text-center rounded-md text-base font-bold bg-brand-accent text-slate-900">Claim Your Spot</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full z-0 pointer-events-none">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center px-4 py-2 rounded-full border border-slate-700 bg-slate-800/50 backdrop-blur-sm mb-8">
+                <span class="flex h-2 w-2 rounded-full bg-brand-success mr-2 animate-pulse"></span>
+                <span class="text-sm font-medium text-slate-300">A Special Initiative for Final Year BCA & BSc IT Students</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+                The Finishing Touch<br>
+                <span class="gradient-text">Your Talent Deserves.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400 mb-10">
+                You've built the foundation. Now, let us guide you through the final mile. Whether your next step is the corporate world or specialized higher education, we are here to ensure you land with confidence.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#curriculum" class="px-8 py-4 border border-transparent text-base font-bold rounded-lg text-slate-900 bg-brand-accent hover:bg-sky-500 transition-all shadow-lg shadow-sky-500/25">
+                    Explore the Program
+                </a>
+                <a href="#about" class="px-8 py-4 border border-slate-700 text-base font-bold rounded-lg text-slate-300 hover:bg-slate-800 transition-all">
+                    Our Vision for You
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Section -->
+    <section id="about" class="py-20 bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-10 lg:mb-0">
+                    <h2 class="text-3xl font-bold text-white mb-6">We Believe in Your <span class="text-brand-accent">Potential</span></h2>
+                    <p class="text-slate-400 text-lg mb-6">
+                        The transition from student to professional—or to a Master's scholar—is the most critical time in your career. We don't just want you to graduate; we want you to evolve.
+                    </p>
+                    <p class="text-slate-400 text-lg mb-6">
+                        By equipping you with modern AI tools, personal branding, and a networking mindset, we are preparing you for a future where you lead, not just follow.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-500/20 flex items-center justify-center mt-1">
+                                <i data-lucide="heart-handshake" class="h-4 w-4 text-blue-400"></i>
+                            </div>
+                            <p class="ml-4 text-slate-300"><strong>Guidance:</strong> Mentorship that helps you choose the right path—job or Master's.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-500/20 flex items-center justify-center mt-1">
+                                <i data-lucide="trending-up" class="h-4 w-4 text-blue-400"></i>
+                            </div>
+                            <p class="ml-4 text-slate-300"><strong>Growth:</strong> Adding the "AI Edge" to your existing academic knowledge.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl transform rotate-3 opacity-20 blur-lg"></div>
+                    <div class="relative bg-slate-800 border border-slate-700 rounded-2xl p-8">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="text-xs text-slate-500">Student_Success_Path.js</div>
+                        </div>
+                        <code class="text-sm font-mono text-slate-300">
+                            <span class="text-purple-400">const</span> yourJourney = {<br>
+                            &nbsp;&nbsp;current: <span class="text-green-400">"Undergraduate"</span>,<br>
+                            &nbsp;&nbsp;potential: <span class="text-brand-accent">"Unlimited"</span><br>
+                            };<br><br>
+                            <span class="text-blue-400">// Our Commitment to You</span><br>
+                            bootcamp.provideMentorship();<br>
+                            bootcamp.enhanceSkills(<span class="text-green-400">"AI"</span>, <span class="text-green-400">"Networking"</span>);<br>
+                            bootcamp.guideNextStep(); <span class="text-slate-500">// Masters or Job?</span><br><br>
+                            <span class="text-purple-400">return</span> <span class="text-yellow-400">Lifelong_Learner</span>;
+                        </code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">The Curriculum</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    Designed to complement your academic foundation with the practical skills needed for tomorrow's challenges.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Module 1 -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-6 text-blue-400">
+                        <i data-lucide="linkedin" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">LinkedIn + AI Strategy</h3>
+                    <p class="text-xs text-brand-accent uppercase tracking-widest font-semibold mb-4">2 Hours • Hands-on</p>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li>• AI-assisted headlines & authentic summaries</li>
+                        <li>• Building a personal brand narrative</li>
+                        <li>• Job hunting hacks & Premium features</li>
+                        <li>• Viral-worthy tech content creation</li>
+                    </ul>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-gray-600/20 rounded-lg flex items-center justify-center mb-6 text-gray-300">
+                        <i data-lucide="github" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">GitHub: Living Portfolio</h3>
+                    <p class="text-xs text-brand-accent uppercase tracking-widest font-semibold mb-4">3 Hours • Hands-on</p>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li>• Interactive READMEs (stats, animations)</li>
+                        <li>• Deploying on Vercel/Netlify</li>
+                        <li>• Copilot-assisted coding demos</li>
+                        <li>• Creating "Wow factor" repositories</li>
+                    </ul>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center mb-6 text-purple-400">
+                        <i data-lucide="bot" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">AI Tools Mastery</h3>
+                    <p class="text-xs text-brand-accent uppercase tracking-widest font-semibold mb-4">3 Hours • Hands-on</p>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li>• Prompt engineering for debugging & learning</li>
+                        <li>• AI for code review & optimization</li>
+                        <li>• Ethics of AI in professional settings</li>
+                        <li>• Building simple AI-powered chatbots</li>
+                    </ul>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-pink-600/20 rounded-lg flex items-center justify-center mb-6 text-pink-400">
+                        <i data-lucide="layers" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">No-Code/Low-Code</h3>
+                    <p class="text-xs text-brand-accent uppercase tracking-widest font-semibold mb-4">4 Hours • Awareness</p>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li>• Full-stack apps without code (FlutterFlow)</li>
+                        <li>• Automation workflows (Zapier, n8n)</li>
+                        <li>• Rapid prototyping for startup ideas</li>
+                        <li>• Deploying on Railway/Render free tiers</li>
+                    </ul>
+                </div>
+
+                <!-- Module 5 -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-indigo-600/20 rounded-lg flex items-center justify-center mb-6 text-indigo-400">
+                        <i data-lucide="message-square" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Discord Networking</h3>
+                    <p class="text-xs text-brand-accent uppercase tracking-widest font-semibold mb-4">2 Hours • Hands-on</p>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li>• Vetting professional tech servers</li>
+                        <li>• Active participation & voice networking</li>
+                        <li>• Real-time collaboration & study groups</li>
+                        <li>• Managing notifications & digital overwhelm</li>
+                    </ul>
+                </div>
+
+                <!-- Module 6 -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-orange-600/20 rounded-lg flex items-center justify-center mb-6 text-orange-400">
+                        <i data-lucide="arrow-big-up" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Reddit Mastery</h3>
+                    <p class="text-xs text-brand-accent uppercase tracking-widest font-semibold mb-4">2 Hours • Hands-on</p>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li>• Finding high-value industry subreddits</li>
+                        <li>• Understanding reddiquette & Karma</li>
+                        <li>• Market research & competitor analysis</li>
+                        <li>• Using Reddit for job hunting (r/forhire)</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white text-center mb-12">How We Support Your Growth</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="h-10 w-10 rounded-full bg-brand-accent flex items-center justify-center">
+                            <i data-lucide="briefcase" class="h-5 w-5 text-slate-900"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white">Professional Readiness</h4>
+                        <p class="text-slate-400 mt-1">Whether you join a startup or a Master's program, you'll walk in with a portfolio that commands respect.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="h-10 w-10 rounded-full bg-brand-accent flex items-center justify-center">
+                            <i data-lucide="zap" class="h-5 w-5 text-slate-900"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white">Academic Advantage</h4>
+                        <p class="text-slate-400 mt-1">Mastering AI and research tools now will give you a massive head start in advanced studies and thesis work.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="h-10 w-10 rounded-full bg-brand-accent flex items-center justify-center">
+                            <i data-lucide="globe" class="h-5 w-5 text-slate-900"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white">Networking & Community</h4>
+                        <p class="text-slate-400 mt-1">Connect with mentors and peers who are committed to lifelong learning and excellence in tech.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="h-10 w-10 rounded-full bg-brand-accent flex items-center justify-center">
+                            <i data-lucide="code" class="h-5 w-5 text-slate-900"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white">Modern Skillset</h4>
+                        <p class="text-slate-400 mt-1">Understand how to build and deploy complete applications, a skill highly valued in both industry and academia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Footer -->
+    <section id="register" class="py-20 bg-gradient-to-br from-slate-900 to-blue-900">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Let's Build Your Future Together.</h2>
+            <p class="text-blue-200 text-lg mb-8">
+                We are excited to welcome you to this exclusive finishing school. Your journey matters to us.
+            </p>
+            <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/10 max-w-lg mx-auto">
+                <form onsubmit="event.preventDefault(); alert('Registration interest registered! This is a demo.');" class="space-y-4">
+                    <div>
+                        <input type="text" placeholder="Full Name" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-600 text-white focus:outline-none focus:border-brand-accent" required>
+                    </div>
+                    <div>
+                        <input type="email" placeholder="College Email ID" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-600 text-white focus:outline-none focus:border-brand-accent" required>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-accent hover:bg-sky-400 text-slate-900 font-bold py-3 rounded-lg transition-colors text-lg shadow-lg">
+                        Claim Your Spot
+                    </button>
+                    <p class="text-xs text-slate-400 mt-2">By registering, you agree to receive updates and mentorship resources.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="font-bold text-lg text-white">TechLaunch<span class="text-brand-accent">Gujarat</span></span>
+                <p class="text-sm text-slate-500">Empowering the next generation of scholars and professionals.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="twitter" class="h-5 w-5"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="linkedin" class="h-5 w-5"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="instagram" class="h-5 w-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
